@@ -19,6 +19,7 @@
     "common-tags": "^1.8.2",
     "jotai": "^1.7.0",
     "next": "^13.5.4",
+    "openai": "^6.9.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
