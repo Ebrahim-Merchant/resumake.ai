@@ -1,9 +1,11 @@
 import dynamic from 'next/dynamic'
 import styled from 'styled-components'
+import { FormProvider, useForm } from 'react-hook-form'
 
 import { Form } from '../components/generator/Form'
 import { Header } from '../components/generator/Header'
 import { Sidebar } from '../components/generator/Sidebar'
+import { FormValues } from '../types'
 
 const Preview = dynamic(
   async () => (await import('../components/generator/Preview')).Preview,
@@ -20,13 +22,23 @@ const Main = styled.main`
   height: 100vh;
 `
 
+const initialFormValues: FormValues = {
+  headings: {},
+  sections: ['profile', 'education', 'work', 'skills', 'projects', 'awards'],
+  selectedTemplate: 1
+}
+
 export default function GeneratorPage() {
+  const formContext = useForm<FormValues>({ defaultValues: initialFormValues })
+
   return (
-    <Main>
-      <Header />
-      <Sidebar />
-      <Form />
-      <Preview />
-    </Main>
+    <FormProvider {...formContext}>
+      <Main>
+        <Header />
+        <Sidebar />
+        <Form />
+        <Preview />
+      </Main>
+    </FormProvider>
   )
 }

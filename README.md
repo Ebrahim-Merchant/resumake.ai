@@ -11,6 +11,24 @@ Simply choose a template, fill in as much (or as little) info as you want, and t
 
 When you're happy with your result, you can download the resume as a PDF, TeX, or JSON document. The JSON output is compatible with [JSONResume](https://jsonresume.org).
 
+## ✨ AI-Powered Features
+
+Resumake now includes AI-powered resume improvement features:
+
+- **📈 Improve with AI**: Automatically enhance your resume with stronger action verbs, impact-focused outcomes, and better clarity
+- **🎯 Tailor to Job Description**: Customize your resume for a specific job by emphasizing relevant skills and experience
+
+### Setup for AI Features
+
+1. Get an OpenAI API key from [OpenAI Platform](https://platform.openai.com/api-keys)
+2. Create a `.env.local` file in the project root:
+   ```bash
+   OPENAI_API_KEY=your_openai_api_key_here
+   ```
+3. Build and run the application
+
+For detailed documentation, see [docs/ai-resume-improvement.md](docs/ai-resume-improvement.md).
+
 ## Credits
 Thanks very much to the creators of the LaTeX templates used in this website.
 
