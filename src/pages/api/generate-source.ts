@@ -37,9 +37,11 @@ function generateSourceCode(formData: FormValues) {
   zip.append(prettyDoc, { name: 'resume.tex' })
   zip.append(readme, { name: 'README.md' })
 
-  if (opts.inputs) {
-    zip.directory(opts.inputs, '../')
-  }
+  // Note: opts.inputs is an array of file URLs, not directories
+  // This feature may need to be implemented differently
+  // if (opts.inputs) {
+  //   zip.directory(opts.inputs, '../')
+  // }
 
   zip.finalize()
 
